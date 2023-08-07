@@ -1,3 +1,233 @@
 .profile-content.dark-mode{
-    background-color: rgb(24, 138, 176);
+    background-color: rgb(100, 97, 97);
+    color: white;
+}
+
+/* Reset some default styles for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.app{
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    width: 50vw;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.title {
+    font-size: 28px;
+}
+
+#btn-mode {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#mode-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+main {
+    padding-top: 20px;
+}
+
+.searchbar-container {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+#no-results {
+    color: red;
+    display: none;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-search {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-color: #0056b3;
+}
+
+.clear-button {
+    /* display: none !important; */
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background-color: #1f7d39;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 480px) {
+    #right-button {
+        margin-top: 10px;
+    }
+}
+
+.profile-container {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info-wrapper {
+    flex: 1;
+}
+
+.profile-name {
+    margin-bottom: 10px;
+}
+
+#user {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.profile-stats-wrapper {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.profile-stat {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-title {
+    font-weight: bold;
+}
+
+.profile-bottom-wrapper {
+    display: flex;
+}
+
+.profile-info {
+    margin-right: 20px;
+}
+
+.bottom-icons {
+    margin-right: 5px;
+}
+
+#location, #page, #twitter, #company {
+    color: #555;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    .profile-container {
+        padding: 10px;
+    }
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    #avatar {
+        margin: 0 auto 10px;
+    }
+}
+
+.followers-container {
+    /* width: 80vw; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto 10px auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.user-card {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-login {
+    font-weight: bold;
+}
+
+.user-link {
+    color: #0366d6;
+    text-decoration: none;
 }
