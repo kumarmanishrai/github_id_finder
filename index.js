@@ -8,14 +8,19 @@ let repos = document.querySelector('#repos');
 let followers = document.querySelector('#followers');
 let following = document.querySelector('#following');
 let buttonContainer = document.querySelector('.button-container');
+let app = document.querySelector('.app')
 
 modeText.addEventListener('click',() => {
-    profileContent.classList.add("dark-mode");
+    profileContent.classList.toggle("dark-mode");
+    modeText.innerText = modeText.innerText=="DARK" ? "LIGHT" : "DARK";
+    app.classList.toggle("dark-mode");
+
 });
 
 
 modeIcon.addEventListener('click',() => {
-    profileContent.classList.toggle("dark-mode");
+  app.classList.toggle("dark-mode");
+  profileContent.classList.toggle("dark-mode");
 });
 
 let input = document.querySelector('#input');
@@ -116,6 +121,10 @@ clearButton.addEventListener('click', function() {
  // Replace '{value}' with the desired GitHub username
 
 const container = document.getElementById('userContainer');
+const headingContainer = document.getElementById('headingContainer');
+
+const heading = document.createElement('h1');
+heading.innerText = 'Followers List';
 
 function createCard(userData) {
   const card = document.createElement('div');
@@ -133,6 +142,7 @@ function createCard(userData) {
 
   const link = document.createElement('a');
   link.classList.add('user-link');
+  link.style.textDecoration = 'none';
   link.href = userData.html_url;
   link.target = '_blank';
   link.textContent = 'Visit Profile';
@@ -140,7 +150,6 @@ function createCard(userData) {
   card.appendChild(avatar);
   card.appendChild(login);
   card.appendChild(link);
-
   container.appendChild(card);
 }
 
@@ -159,6 +168,9 @@ async function searchFollowers (value){
     // Loop through the followersData array and create a card for each follower
     console.log(data);
     container.innerHTML = '';
+    
+    headingContainer.appendChild(heading)
+    
     data.forEach(follower => createCard(follower));
   })
   .catch(error => {
